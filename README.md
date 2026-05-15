@@ -1,131 +1,72 @@
 # AI Assistant Fullstack Test Task
 
-Готовое fullstack-приложение для тестовой задачи: React + Vite + Tailwind CSS v4 на frontend и Express + OpenAI API на backend.
+Fullstack-приложение для отправки текстового сообщения на backend, получения AI-ответа и отображения результата в интерфейсе чата.
 
-## Что реализовано
+Проект выполнен как тестовое задание для fullstack-разработчика.
 
-- Минималистичный AI chat interface
-- Поле ввода текста
-- Отправка текста на backend
-- Запрос к OpenAI API
-- Отображение ответа на экране
-- Голосовой ввод через Web Speech API
-- Loading state
-- Обработка ошибок
-- Очистка чата
-- Dark / Light mode
-- Адаптивная основа под desktop/mobile
+## Demo
 
-## Стек
+Frontend: `вставь_ссылку_на_frontend_vercel`
+
+Backend health check: `https://test-sandy-omega-48.vercel.app/api/health`
+
+GitHub repository: `вставь_ссылку_на_github`
+
+---
+
+## Стек технологий
 
 ### Frontend
 
 - React
 - Vite
 - Tailwind CSS v4
-- @tailwindcss/vite
 - lucide-react
+- Web Speech API
 
 ### Backend
 
 - Node.js
-- Express
+- Express.js
+- PostgreSQL
+- Neon Database
 - OpenAI SDK
-- dotenv
-- cors
+- Vercel Serverless Functions
 
-## Установка
+### Deploy
 
-### 1. Backend
+- Frontend: Vercel
+- Backend: Vercel
+- Database: Neon PostgreSQL
 
-```bash
-cd server
-npm install
-```
+---
 
-Создай файл `.env` на основе `.env.example`:
+## Основной функционал
 
-```env
-PORT=5000
-CLIENT_URL=http://localhost:5173
-OPENAI_API_KEY=your_openai_api_key_here
-```
+- Поле для ввода текста
+- Отправка сообщения на backend
+- Отображение ответа в интерфейсе чата
+- История сообщений
+- Сохранение сообщений в Neon PostgreSQL
+- Голосовой ввод через Web Speech API
+- Кнопка микрофона для распознавания речи
+- Подстановка распознанного текста в поле ввода
+- Индикатор загрузки при ожидании ответа
+- Обработка ошибок на frontend и backend
+- Очистка истории чата
+- Dark / Light mode
+- Адаптивный минималистичный интерфейс
 
-Запуск backend:
+---
 
-```bash
-npm run dev
-```
+## Важное уточнение по AI API
 
-Backend будет работать на:
+Проект поддерживает интеграцию с OpenAI API.
 
-```txt
-http://localhost:5000
-```
+В deployed demo включен `mock AI mode`, потому что OpenAI API требует активного billing на OpenAI Platform.
 
-### 2. Frontend
-
-В новом терминале:
-
-```bash
-cd client
-npm install
-```
-
-Создай файл `.env` на основе `.env.example`:
+При этом backend уже подготовлен к работе с настоящим OpenAI API. Для переключения нужно добавить API key и изменить переменную окружения:
 
 ```env
-VITE_API_URL=http://localhost:5000
-```
-
-Запуск frontend:
-
-```bash
-npm run dev
-```
-
-Frontend будет работать на:
-
-```txt
-http://localhost:5173
-```
-
-## API
-
-### POST /api/chat
-
-Request body:
-
-```json
-{
-  "message": "Что такое React?"
-}
-```
-
-Response:
-
-```json
-{
-  "answer": "React — это JavaScript-библиотека..."
-}
-```
-
-## Важно
-
-OpenAI API key хранится только на backend. Не добавляй API key во frontend `.env`.
-
-## Tailwind CSS v4
-
-Проект использует Tailwind CSS v4 через Vite plugin:
-
-```js
-import tailwindcss from "@tailwindcss/vite";
-```
-
-В `src/index.css` используется новый импорт:
-
-```css
-@import "tailwindcss";
-```
-
-Старый `tailwind.config.js` и `postcss.config.js` здесь не нужны.
+USE_MOCK_AI=false
+OPENAI_API_KEY=your_openai_api_key
