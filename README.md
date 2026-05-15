@@ -6,11 +6,11 @@ Fullstack-приложение для отправки текстового со
 
 ## Demo
 
-Frontend: `вставь_ссылку_на_frontend_vercel`
+Frontend: `[вставь_ссылку_на_frontend_vercel](https://test-pbdd.vercel.app/)`
 
 Backend health check: `https://test-sandy-omega-48.vercel.app/api/health`
 
-GitHub repository: `вставь_ссылку_на_github`
+GitHub repository: `[вставь_ссылку_на_github](https://github.com/madiardzetibergen-hash/test/)`
 
 ---
 
